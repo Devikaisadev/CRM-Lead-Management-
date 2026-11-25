@@ -1,0 +1,47 @@
+{% extends "base.html" %}{% block title %}Dashboard · LeadFlow{% endblock %}
+{% block content %}
+<div class="d-flex flex-wrap justify-content-between align-items-end gap-3 mb-4">
+  <div><div class="eyebrow">OVERVIEW</div><h1 class="page-title">Lead dashboard</h1><p class="muted mb-0">Track your progress!</p></div>
+  <button class="btn btn-primary px-4" data-bs-toggle="modal" data-bs-target="#leadModal" onclick="prepareAdd()">＋ Add new lead</button>
+</div>
+<div class="row g-3 mb-4">
+  <div class="col-6 col-xl-3"><div class="stat-card"><div class="stat-label">Total leads</div><div class="stat-value" id="totalCount">0</div><div class="stat-note">All prospects</div></div></div>
+  <div class="col-6 col-xl-3"><div class="stat-card"><div class="stat-label">New leads</div><div class="stat-value" id="newCount">0</div><div class="stat-note"><span class="dot blue"></span> Awaiting action</div></div></div>
+  <div class="col-6 col-xl-3"><div class="stat-card"><div class="stat-label">Contacted</div><div class="stat-value" id="contactedCount">0</div><div class="stat-note"><span class="dot orange"></span> In conversation</div></div></div>
+  <div class="col-6 col-xl-3"><div class="stat-card"><div class="stat-label">Converted</div><div class="stat-value" id="convertedCount">0</div><div class="stat-note"><span class="dot green"></span> Won opportunities</div></div></div>
+</div>
+<div class="panel">
+  <div class="d-flex flex-wrap justify-content-between align-items-center gap-3 mb-3">
+    <div><h5 class="mb-1">All leads</h5><p class="muted small mb-0">Search, filter, and manage your prospects.</p></div>
+    <div class="d-flex flex-wrap gap-2">
+      <input id="searchInput" class="form-control search-box" placeholder="⌕  Search name, email, company..." oninput="loadLeads()">
+      <select id="statusFilter" class="form-select filter-box" onchange="loadLeads()">
+        <option value="">All statuses</option>{% for status in statuses %}<option>{{ status }}</option>{% endfor %}
+      </select>
+    </div>
+  </div>
+  <div class="table-responsive">
+    <table class="table align-middle crm-table">
+      <thead><tr><th>CONTACT</th><th>COMPANY</th><th>SOURCE</th><th>STATUS</th><th>CREATED</th><th class="text-end">ACTIONS</th></tr></thead>
+      <tbody id="leadsBody"><tr><td colspan="6" class="text-center py-5 muted">Loading leads…</td></tr></tbody>
+    </table>
+  </div>
+  <div class="small muted" id="resultCount"></div>
+</div>
+
+<div class="modal fade" id="leadModal" tabindex="-1"><div class="modal-dialog modal-lg modal-dialog-centered"><div class="modal-content">
+  <div class="modal-header"><div><h5 class="modal-title" id="modalTitle">Add a new lead</h5><div class="muted small">Enter the prospect's contact information.</div></div><button class="btn-close" data-bs-dismiss="modal"></button></div>
+  <form id="leadForm"><div class="modal-body"><div id="formError" class="alert alert-danger d-none"></div>
+    <input type="hidden" id="leadId">
+    <div class="row g-3">
+      <div class="col-md-6"><label class="form-label">Full name *</label><input class="form-control" id="full_name" required maxlength="150"></div>
+      <div class="col-md-6"><label class="form-label">Email address *</label><input class="form-control" id="email" type="email" required maxlength="150"></div>
+      <div class="col-md-6"><label class="form-label">Phone number *</label><input class="form-control" id="phone" required maxlength="20"></div>
+      <div class="col-md-6"><label class="form-label">Company name *</label><input class="form-control" id="company_name" required maxlength="150"></div>
+      <div class="col-md-6"><label class="form-label">Lead source *</label><select class="form-select" id="lead_source" required>{% for source in sources %}<option>{{ source }}</option>{% endfor %}</select></div>
+      <div class="col-md-6"><label class="form-label">Lead status *</label><select class="form-select" id="lead_status" required>{% for status in statuses %}<option>{{ status }}</option>{% endfor %}</select></div>
+    </div>
+  </div><div class="modal-footer"><button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancel</button><button class="btn btn-primary px-4" id="saveButton">Save lead</button></div></form>
+</div></div></div>
+{% endblock %}
+{% block scripts %}<script src="{{ url_for('static', filename='js/app.js') }}"></script>{% endblock %}

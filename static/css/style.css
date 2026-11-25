@@ -1,0 +1,376 @@
+
+/* =================================
+   1. ROOT - COMMON COLOURS
+================================= */
+
+:root {
+    --navy: #E07A94;
+    --blue: #E07A94;
+    --ink: #1c2740;
+    --muted: #7c879b;
+    --line: #e9edf4;
+    --bg: #f5f7fb;
+}
+
+
+/* =================================
+   2. GENERAL STYLING
+================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+
+/* =================================
+   3. NAVBAR
+================================= */
+
+.topbar {
+    background: var(--navy);
+    height: 68px;
+}
+
+.navbar-brand {
+    letter-spacing: 0.2px;
+}
+
+.brand-tag {
+    font-size: 10px;
+    background: #ffffff22;
+    padding: 4px 7px;
+    border-radius: 5px;
+    margin-left: 5px;
+    letter-spacing: 1px;
+}
+
+
+/* =================================
+   4. PAGE HEADINGS
+================================= */
+
+.page-title {
+    font-weight: 750;
+    letter-spacing: -1px;
+    margin: 3px 0 5px;
+    font-size: 30px;
+}
+
+.eyebrow {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    color: var(--blue);
+}
+
+.muted {
+    color: var(--muted);
+}
+
+
+/* =================================
+   5. DASHBOARD STATISTIC CARDS
+================================= */
+
+.stat-card,
+.panel {
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    box-shadow: 0 4px 18px #23365b08;
+}
+
+.stat-card {
+    padding: 20px;
+    height: 100%;
+}
+
+.stat-label {
+    font-size: 13px;
+    color: var(--muted);
+    font-weight: 600;
+}
+
+.stat-value {
+    font-size: 32px;
+    font-weight: 750;
+    letter-spacing: -1px;
+    margin: 5px 0;
+}
+
+.stat-note {
+    font-size: 11px;
+    color: var(--muted);
+}
+
+
+/* =================================
+   6. COLOURED DOTS
+================================= */
+
+.dot {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.blue {
+    background: #4775f5;
+}
+
+.orange {
+    background: #f3a43b;
+}
+
+.green {
+    background: #24b47e;
+}
+
+
+/* =================================
+   7. LEAD TABLE AND PANEL
+================================= */
+
+.panel {
+    padding: 22px;
+}
+
+.crm-table {
+    font-size: 13px;
+    margin-bottom: 12px;
+}
+
+.crm-table thead th {
+    font-size: 10px;
+    color: #8b95a7;
+    letter-spacing: 0.8px;
+    font-weight: 750;
+    border-bottom: 1px solid var(--line);
+    padding: 13px 10px;
+}
+
+.crm-table tbody td {
+    padding: 15px 10px;
+    border-color: #f0f2f6;
+}
+
+
+/* =================================
+   8. CONTACT AND COMPANY DETAILS
+================================= */
+
+.contact-name {
+    font-weight: 700;
+    color: var(--ink);
+}
+
+.contact-email {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 3px;
+}
+
+.company-name {
+    font-weight: 600;
+}
+
+
+/* =================================
+   9. LEAD STATUS BADGES
+================================= */
+
+.status-pill {
+    font-size: 11px;
+    padding: 6px 10px;
+    border-radius: 20px;
+    font-weight: 700;
+    display: inline-block;
+}
+
+.status-New {
+    background: #edf2ff;
+    color: #315bd6;
+}
+
+.status-Contacted {
+    background: #fff4e5;
+    color: #b86a08;
+}
+
+.status-Interested {
+    background: #f3edff;
+    color: #7544c8;
+}
+
+.status-Converted {
+    background: #e8f8f1;
+    color: #16845a;
+}
+
+.status-Lost {
+    background: #fff0f0;
+    color: #c34d4d;
+}
+
+
+/* =================================
+   10. SEARCH AND FILTER
+================================= */
+
+.search-box {
+    width: 260px;
+}
+
+.filter-box {
+    width: 155px;
+}
+
+
+/* =================================
+   11. BUTTONS
+================================= */
+
+.btn-primary {
+    background: var(--blue);
+    border-color: var(--blue);
+}
+
+.btn-primary:hover {
+    background: #254fcf;
+}
+
+.action-btn {
+    border: 0;
+    background: transparent;
+    color: #64718a;
+    padding: 5px 8px;
+    border-radius: 6px;
+}
+
+.action-btn:hover {
+    background: #f0f3fa;
+    color: var(--blue);
+}
+
+
+/* =================================
+   12. FORM FIELDS
+================================= */
+
+.form-control,
+.form-select {
+    border-color: #e2e7ef;
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 13px;
+}
+
+.form-label {
+    font-size: 12px;
+    font-weight: 650;
+    color: #4c5870;
+}
+
+
+/* =================================
+   13. MODAL POPUP
+================================= */
+
+.modal-content {
+    border: 0;
+    border-radius: 15px;
+    box-shadow: 0 20px 70px #13203b30;
+}
+
+.modal-header,
+.modal-footer {
+    padding: 20px 24px;
+    border-color: var(--line);
+}
+
+.modal-body {
+    padding: 22px 24px;
+}
+
+
+/* =================================
+   14. LOGIN AND REGISTER PAGE
+================================= */
+
+.auth-shell {
+    min-height: calc(100vh - 30px);
+    display: grid;
+    place-items: center;
+    padding: 24px;
+}
+
+.auth-card {
+    background: white;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 36px;
+    width: min(100%, 420px);
+    box-shadow: 0 12px 45px #23365b10;
+}
+
+.auth-card h2 {
+    font-weight: 750;
+    letter-spacing: -0.7px;
+}
+
+.auth-card .muted {
+    font-size: 13px;
+}
+
+.logo-mark {
+    width: 43px;
+    height: 43px;
+    border-radius: 12px;
+    background: #edf2ff;
+    color: var(--blue);
+    display: grid;
+    place-items: center;
+    font-size: 25px;
+    margin-bottom: 22px;
+}
+
+
+/* =================================
+   15. RESPONSIVE DESIGN - MOBILE
+================================= */
+
+@media (max-width: 600px) {
+
+    .panel {
+        padding: 14px;
+    }
+
+    .search-box {
+        width: 100%;
+    }
+
+    .filter-box {
+        width: 100%;
+    }
+
+    .page-title {
+        font-size: 25px;
+    }
+
+    .stat-card {
+        padding: 14px;
+    }
+
+    .stat-value {
+        font-size: 27px;
+    }
+
+}

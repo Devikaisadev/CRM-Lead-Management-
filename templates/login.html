@@ -1,0 +1,12 @@
+{% extends "base.html" %}{% block title %}Login · LeadFlow{% endblock %}
+{% block content %}
+<div class="auth-card">
+  <div class="logo-mark">$$$</div><h2>Welcome back</h2><p class="muted">Sign in to manage your leads</p>
+  <form method="post">
+    <label class="form-label">Email address</label><input class="form-control mb-3" type="email" name="email" required placeholder="you@company.com">
+    <label class="form-label">Password</label><input class="form-control mb-4" type="password" name="password" required placeholder="Your password">
+    <button class="btn btn-primary w-100 py-2">Sign in</button>
+  </form>
+  <p class="text-center mt-4 mb-0 muted">Newbie here ? <a href="{{ url_for('register') }}">Create an account</a></p>
+</div>
+{% endblock %}
